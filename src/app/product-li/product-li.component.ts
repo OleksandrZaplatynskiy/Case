@@ -25,6 +25,10 @@ export class ProductLiComponent implements OnInit {
       name: [''],
       price: ['']
     })  
+
+    this.dataService.viewCatalog.subscribe( (view) => {
+      console.log(view);
+    })
   }
 
   onAddProduct() {

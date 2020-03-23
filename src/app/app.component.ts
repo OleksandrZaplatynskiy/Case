@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { DataService } from './date.service';
 
 @Component({
   selector: 'app-root',
@@ -8,5 +9,11 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'course';
 
-  name;
+  constructor(
+    private dataServise: DataService
+  ) {}
+
+  changeView(view) {
+    this.dataServise.viewCatalog.next(view);
+  }
 }
